@@ -1,5 +1,6 @@
 const todoList = [];
 
+displayTodo(todoList);
 // this functions adds tasks typed in the input to the todoList array
 function addTask() {
   const input = document.querySelector(".js-task-input");
@@ -8,8 +9,19 @@ function addTask() {
   console.log(todoList);
 
   input.value = "";
+  displayTodo(todoList);
 }
 
 document.querySelector(".js-add-task-button").addEventListener("click", () => {
   addTask();
 });
+
+function displayTodo(array) {
+  let todoListHTML = ``;
+  for (let i = 0; i < array.length; i++) {
+    const todo = array[i];
+    const html = `<p>${todo}</p>`;
+    todoListHTML += html;
+  }
+  document.querySelector(".js-display-todo").innerHTML = todoListHTML;
+}
