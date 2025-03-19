@@ -26,10 +26,25 @@ function displayTodo(array) {
   let todoListHTML = ``;
   for (let i = 0; i < array.length; i++) {
     const todo = array[i];
-    const html = `<p>${todo}</p>`;
+    const html = `
+    <p>
+      ${todo}
+      <button class="js-delete-button" data-index="${i}" >Delete</button> 
+    </p>`;
+
     todoListHTML += html;
   }
   document.querySelector(".js-display-todo").innerHTML = todoListHTML;
+  // selecting all the delete buttons, then getting index from the
+  //  data attribute and use it to remove the task fom the array
+  const deleteButtons = document.querySelectorAll(".js-delete-button");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = button.dataset.index;
+      todoList.splice(index, 1);
+      displayTodo(todoList);
+    });
+  });
 }
 
 displayTodo(todoList);
