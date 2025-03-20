@@ -9,28 +9,28 @@
   <body>
     <div class="container">
       <div class="todo-heading">
-        <h2>
-          To-do list<img
+        <h2 class="todo-h2">
+          To-Do list<img
             class="notepad-image"
             src="./assets/icons/notepad.svg"
             alt=""
           />
         </h2>
+
+        <div class="user-input-row">
+          <input
+            placeholder="Type a task"
+            class="js-task-input task-input"
+            type="text"
+          />
+
+          <input class="js-date-input date-input" type="date" />
+
+          <button class="js-add-task-button add-button">Add</button>
+        </div>
+
+        <div class="js-display-todo display-todo-grid"></div>
       </div>
-
-      <div class="user-input-row">
-        <input
-          placeholder="Type a task"
-          class="js-task-input task-input"
-          type="text"
-        />
-
-        <input class="js-date-input date-input" type="date" />
-
-        <button class="js-add-task-button add-button">Add</button>
-      </div>
-
-      <div class="js-display-todo display-todo-grid"></div>
     </div>
 
     <script src=".//assets/scripts/script.js"></script>

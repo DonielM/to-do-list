@@ -31,8 +31,8 @@ function displayTodo(array) {
     const { taskName, taskDate } = todoObject;
     // const taskDate = todoObject.taskDate;
     const html = `
-    <div>${taskName}</div>
-    <div>${taskDate}</div>
+    <div class="task-name">${taskName}</div>
+    <div class="task-date">${taskDate}</div>
       <button class="js-delete-button delete-button" data-index="${i}">
         Delete
       </button> 
