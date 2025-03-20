@@ -1,4 +1,4 @@
-const todoList = [{ taskName: "test", taskDate: " 06-12-20026" }];
+const todoList = [{ taskName: "test", taskDate: "06-12-20026" }];
 
 displayTodo(todoList);
 // this functions adds tasks typed in the input to the todoList array
@@ -13,7 +13,7 @@ function addTask() {
   }
 
   todoList.push({ taskName: taskInput, taskDate: dateInput });
-  console.log(todoList, dateInput);
+  console.log(todoList);
 
   input.value = "";
   displayTodo(todoList);
@@ -37,8 +37,6 @@ function displayTodo(array) {
     </p>`;
 
     todoListHTML += html;
-    console.log(taskName);
-    console.log(taskDate);
   }
   document.querySelector(".js-display-todo").innerHTML = todoListHTML;
   // selecting all the delete buttons, then getting index from the
