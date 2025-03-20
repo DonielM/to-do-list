@@ -7,15 +7,21 @@
     <title>To-do list</title>
   </head>
   <body>
-    <p>To-do list</p>
+    <h1>To-do list</h1>
 
-    <input placeholder="Type a task" class="js-task-input" type="text" />
+    <div class="user-input-row">
+      <input
+        placeholder="Type a task"
+        class="js-task-input task-input"
+        type="text"
+      />
 
-    <input class="js-date-input" type="date" />
+      <input class="js-date-input date-input" type="date" />
 
-    <button class="js-add-task-button">Add</button>
+      <button class="js-add-task-button add-button">Add</button>
+    </div>
 
-    <div class="js-display-todo"></div>
+    <div class="js-display-todo display-todo-grid"></div>
 
     <script src=".//assets/scripts/script.js"></script>
   </body>
