@@ -2,6 +2,21 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgb(61, 154, 154);
+  padding: 10px;
+}
+.todo-heading {
+  width: 100%;
+  max-width: 540px;
+  background-color: aliceblue;
+  margin: 100px auto 20px;
+  padding: 40px 40px 70px;
+  border-radius: 8px;
+}
+
 .display-todo-grid,
 .user-input-row {
   display: grid;
@@ -41,4 +56,9 @@
   border: none;
   cursor: pointer;
   padding: 10px;
+}
+
+.notepad-image {
+  height: 50px;
+  width: 50px;
 }
