@@ -1,5 +1,17 @@
 const todoList = [];
 
+function loadTasks() {
+  const storedTasks = localStorage.getItem("todoList");
+  if (storedTasks) {
+    todoList.push(...JSON.parse(storedTasks));
+  }
+  displayTodo(todoList);
+}
+
+function saveTask() {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+}
+
 displayTodo(todoList);
 // this functions adds tasks typed in the input to the todoList array
 function addTask() {
@@ -21,6 +33,7 @@ function addTask() {
   console.log(todoList);
 
   input.value = "";
+  saveTask();
   displayTodo(todoList);
 }
 
@@ -53,6 +66,7 @@ function displayTodo(array) {
     button.addEventListener("click", () => {
       const index = button.dataset.index;
       todoList.splice(index, 1);
+      saveTask();
       displayTodo(todoList);
     });
   });
@@ -65,3 +79,5 @@ document.body.addEventListener("keydown", (event) => {
     addTask();
   }
 });
+
+loadTasks();
