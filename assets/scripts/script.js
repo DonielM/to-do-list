@@ -1,4 +1,4 @@
-const todoList = [{ taskName: "test", taskDate: "06-12-20026" }];
+const todoList = [];
 
 displayTodo(todoList);
 // this functions adds tasks typed in the input to the todoList array
@@ -9,6 +9,11 @@ function addTask() {
 
   if (taskInput === "") {
     alert("Please enter a task");
+    return;
+  }
+
+  if (dateInput === "") {
+    alert("Please enter a date");
     return;
   }
 
@@ -54,3 +59,9 @@ function displayTodo(array) {
 }
 
 displayTodo(todoList);
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
