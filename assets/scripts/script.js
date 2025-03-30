@@ -43,21 +43,22 @@ document.querySelector(".js-add-task-button").addEventListener("click", () => {
 
 function displayTodo(array) {
   let todoListHTML = ``;
-  for (let i = 0; i < array.length; i++) {
-    const todoObject = array[i];
+
+  array.forEach((todoObject, i) => {
     // const taskName = todoObject.taskName;
     const { taskName, taskDate } = todoObject;
     // const taskDate = todoObject.taskDate;
     const html = `
-    <div class="task-name">${taskName}</div>
-    <div class="task-date">${taskDate}</div>
-      <button class="js-delete-button delete-button" data-index="${i}">
-        Delete
-      </button> 
-    `;
+  <div class="task-name">${taskName}</div>
+  <div class="task-date">${taskDate}</div>
+    <button class="js-delete-button delete-button" data-index="${i}">
+      Delete
+    </button> 
+  `;
 
     todoListHTML += html;
-  }
+  });
+
   document.querySelector(".js-display-todo").innerHTML = todoListHTML;
   // selecting all the delete buttons, then getting index from the
   //  data attribute and use it to remove the task fom the array
